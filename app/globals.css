@@ -1,26 +1,264 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary:    #000000;
+  --bg-surface:    #050505;
+  --bg-elevated:   #0a0a0a;
+  --bg-card:       #080808;
+  --text-primary:  #ffffff;
+  --text-high:     rgba(255,255,255,0.90);
+  --text-mid:      rgba(255,255,255,0.55);
+  --text-low:      rgba(255,255,255,0.30);
+  --text-faint:    rgba(255,255,255,0.15);
+  --border-glow:   rgba(255,255,255,0.20);
+  --border-subtle: rgba(255,255,255,0.08);
+  --border-faint:  rgba(255,255,255,0.04);
+  --accent:        #3B3BCC;
+  --accent-mid:    rgba(59,59,204,0.40);
+  --accent-faint:  rgba(59,59,204,0.12);
+  --glow-white:    rgba(255,255,255,0.08);
+  --glow-white-md: rgba(255,255,255,0.15);
+  --radius-sm:   3px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --radius-pill: 999px;
+  --transition:  150ms ease;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+a, button { cursor: none; }
+
+.font-display {
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  letter-spacing: 0.06em;
+  line-height: 0.95;
+}
+
+.btn-primary {
+  background: #ffffff;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 6px;
+  border: none;
+  cursor: none;
+  transition: background var(--transition);
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+.btn-primary:hover { background: rgba(255,255,255,0.85); }
+
+.btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 11px 26px;
+  border-radius: 6px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  cursor: none;
+  transition: border-color var(--transition), background var(--transition);
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  border-color: rgba(255,255,255,0.70);
+  background: rgba(255,255,255,0.04);
+}
+
+/* Ken Burns */
+@keyframes kenburns {
+  0%   { transform: scale(1.00) translate(0, 0); }
+  50%  { transform: scale(1.06) translate(-1%, 0.5%); }
+  100% { transform: scale(1.00) translate(0, 0); }
+}
+.hero-bg-img { animation: kenburns 20s ease-in-out infinite; }
+
+/* Badge live dot */
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.30; }
+}
+.badge-live-dot {
+  width: 5px; height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+  animation: pulse-badge 1.4s ease-in-out infinite;
+}
+
+/* Loading dots */
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0; }
+  40%           { opacity: 1; }
+}
+.loading-dots span { animation: blink 1.2s infinite; font-size: 22px; }
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+/* Ticket CTA button */
+.cta-btn-ticket {
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.cta-btn-ticket:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,255,255,0.10);
+}
+.cta-btn-ticket:active { transform: scale(0.97); box-shadow: none; }
+
+/* Lineup card photo hover */
+.lineup-card-photo { transition: transform 600ms ease; }
+.lineup-card-inner:hover .lineup-card-photo { transform: scale(1.05); }
+.lineup-card-overlay { transition: background 600ms ease; }
+.lineup-card-inner:hover .lineup-card-overlay { background: rgba(0,0,0,0.50) !important; }
+
+/* Custom cursor */
+.custom-cursor {
+  position: fixed;
+  width: 12px; height: 12px;
+  border: 1px solid rgba(255,255,255,0.60);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  top: 0; left: 0;
+  transform: translate(-50%, -50%);
+  transition: width 200ms ease, height 200ms ease,
+              border-radius 200ms ease, border-color 200ms ease;
+  mix-blend-mode: difference;
+}
+.custom-cursor.hovering {
+  width: 32px; height: 32px;
+  border-color: rgba(255,255,255,0.90);
+  border-radius: 3px;
+}
+
+/* ── COLMEIA: perspectiva 3D para animação das letras ── */
+.logo-neon-text {
+  transform-style: preserve-3d;
+}
+
+/* ── Cursor personalizado (substituindo .custom-cursor) ── */
+#colmeia-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition:
+    width 180ms ease,
+    height 180ms ease,
+    border-radius 180ms ease,
+    border-color 180ms ease,
+    opacity 200ms ease;
+  mix-blend-mode: difference;
+}
+
+#colmeia-cursor.is-hovering {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  border-color: rgba(255, 255, 255, 0.95);
+}
+
+#colmeia-cursor.is-clicking {
+  width: 10px;
+  height: 10px;
+  border-color: #3B3BCC;
+}
+
+/* ── Hero: preservar espaço para abelhas ── */
+.hero-logo-wrapper {
+  padding: 80px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Glow pulse da logo na navbar ── */
+@keyframes glow-breathe {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px #fff) drop-shadow(0 0 10px rgba(255,255,255,0.50));
+  }
+  50% {
+    filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 16px rgba(255,255,255,0.75));
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.logo-navbar-glow {
+  animation: glow-breathe 3.5s ease-in-out infinite;
 }
+
+/* ── Ken Burns no hero background ── */
+@keyframes ken-burns {
+  0%   { transform: scale(1.00) translate(0%, 0%); }
+  33%  { transform: scale(1.05) translate(-0.8%, 0.4%); }
+  66%  { transform: scale(1.08) translate(0.5%, -0.6%); }
+  100% { transform: scale(1.00) translate(0%, 0%); }
+}
+
+.hero-bg-image {
+  animation: ken-burns 22s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ── Card do lineup hover ── */
+.lineup-card {
+  transition: border-color 300ms ease, transform 300ms ease;
+}
+
+.lineup-card:hover {
+  border-color: rgba(255, 255, 255, 0.20) !important;
+  transform: translateX(4px);
+}
+
+.lineup-card .card-bg-media {
+  transition: transform 600ms ease, opacity 400ms ease;
+}
+
+.lineup-card:hover .card-bg-media {
+  transform: scale(1.05);
+  opacity: 0.45 !important;
+}
+
+/* Ticket divider */
+.ticket-divider {
+  border: none;
+  border-top: 1.5px dashed rgba(255,255,255,0.10);
+  margin: 20px -32px;
+  position: relative;
+}
+.ticket-divider::before, .ticket-divider::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  width: 14px; height: 14px;
+  background: #000;
+  border-radius: 50%;
+  border: 0.5px solid rgba(255,255,255,0.06);
+}
+.ticket-divider::before { left: -7px; }
+.ticket-divider::after  { right: -7px; }
