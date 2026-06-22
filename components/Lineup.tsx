@@ -78,20 +78,6 @@ export default function Lineup() {
             />
             <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.70)" }} />
 
-            <div style={{
-              position: "absolute", top: "14px", left: "20px",
-              display: "flex", alignItems: "center",
-              background: "rgba(59,59,204,0.15)",
-              border: "0.5px solid rgba(59,59,204,0.50)",
-              borderRadius: "3px", padding: "4px 10px",
-              fontSize: "10px", fontWeight: 600,
-              letterSpacing: "0.12em", color: "rgba(255,255,255,0.80)",
-              textTransform: "uppercase",
-            }}>
-              <span className="badge-live-dot" />
-              AO VIVO
-            </div>
-
             <div style={{ position: "relative", zIndex: 2 }}>
               <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.35)", letterSpacing: "0.08em", marginBottom: "4px" }}>15h – 16h</div>
               <div style={{ fontSize: "22px", fontWeight: 700, color: "#fff", letterSpacing: "0.02em" }}>Nectar</div>
@@ -106,10 +92,10 @@ export default function Lineup() {
             padding: "24px 28px",
           }}>
             <Image
-              src="/assets/deeko-cover.jpg"
+              src="/assets/deeko-pressure.jpg"
               alt=""
               fill
-              style={{ objectFit: "cover", opacity: 0.10, mixBlendMode: "luminosity" }}
+              style={{ objectFit: "cover", opacity: 0.25, mixBlendMode: "luminosity" }}
             />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0.70) 100%)" }} />
 

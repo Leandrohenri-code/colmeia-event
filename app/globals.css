@@ -262,3 +262,27 @@ a, button { cursor: none; }
 }
 .ticket-divider::before { left: -7px; }
 .ticket-divider::after  { right: -7px; }
+
+/* ── Mobile optimization ── */
+@media (max-width: 639px) {
+  /* Hide custom cursor on touch devices */
+  #colmeia-cursor { display: none; }
+  body, a, button { cursor: auto; }
+
+  /* Hero */
+  .hero-logo-wrapper { padding: 48px 24px; }
+
+  /* Lineup cards — full width, no side scroll */
+  .lineup-section { padding: 72px 16px 64px !important; }
+  .lineup-card { height: auto !important; min-height: 140px !important; }
+
+  /* Lancamento section */
+  .lancamento-section { padding: 72px 20px 72px !important; }
+
+  /* Buttons — full width on mobile */
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}

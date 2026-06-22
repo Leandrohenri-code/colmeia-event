@@ -37,11 +37,15 @@ export default function Navbar() {
 
       {/* Desktop */}
       <div style={{ display: "flex", alignItems: "center", gap: "18px" }} className="hidden-mobile">
-        <a href="#" aria-label="Instagram" style={{ opacity: 0.55, color: "#fff", lineHeight: 1, transition: "opacity 150ms ease" }}
+        <a href="https://www.instagram.com/movimentocolmeia?igsh=MWVqaHowNWh5dDJ2dg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ opacity: 0.55, color: "#fff", lineHeight: 1, transition: "opacity 150ms ease" }}
           onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
           onMouseLeave={e => (e.currentTarget.style.opacity = "0.55")}
         >
-          <GloboWireframe size={18} />
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
         </a>
         <a href="https://wa.me/5511984687528" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style={{ opacity: 0.55, color: "#fff", lineHeight: 1, transition: "opacity 150ms ease" }}
           onMouseEnter={e => (e.currentTarget.style.opacity = "1")}

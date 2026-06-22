@@ -103,7 +103,7 @@ export default function Hero() {
         <div className="hero-bg-image" style={{ position: "absolute", inset: 0 }}>
           <Image src="/assets/deeko-pressure.jpg" alt="" fill priority style={{ objectFit: "cover", objectPosition: "center top" }} />
         </div>
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.78) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.90) 100%)" }} />
         {/* Grain */}
         <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.04, zIndex: 2, pointerEvents: "none" }}>
           <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>

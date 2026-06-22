@@ -26,10 +26,9 @@ export default function AfterParty() {
         <Eyebrow>Mais</Eyebrow>
         <h2 className="font-display" style={{ fontSize: "clamp(36px,6vw,52px)", color: "#fff", marginBottom: "16px" }}>AFTER PARTY</h2>
         <p style={{ fontSize: "14px", color: "var(--text-mid)", maxWidth: "360px", marginBottom: "28px", lineHeight: 1.7 }}>
-          Possibilidade de after após o encerramento oficial às 18h. Fique ligado nas redes.
+          After confirmado após a finalização dos sets. Nos vemos lá.
         </p>
-        {/* TODO: substituir href pelo link real do Instagram */}
-        <a className="btn-secondary" href="#">SEGUIR NO INSTAGRAM</a>
+        <a className="btn-secondary" href="https://www.instagram.com/movimentocolmeia?igsh=MWVqaHowNWh5dDJ2dg==" target="_blank" rel="noopener noreferrer">SEGUIR NO INSTAGRAM</a>
       </div>
     </section>
   );
