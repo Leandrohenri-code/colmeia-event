@@ -28,7 +28,7 @@ export default function Alimentacao() {
         <div style={{ background: "var(--bg-card)", border: "0.5px solid var(--border-subtle)", borderRadius: "10px", padding: "22px 28px", display: "flex", alignItems: "center", gap: "16px", maxWidth: "340px", margin: "0 auto" }}>
           <span style={{ fontSize: "26px" }}>🍕</span>
           <div style={{ textAlign: "left" }}>
-            <p style={{ fontSize: "15px", fontWeight: 600, color: "var(--text-high)" }}>Pizza de Pepperoni</p>
+            <p style={{ fontSize: "15px", fontWeight: 600, color: "var(--text-high)" }}>PIZZA</p>
             <p style={{ fontSize: "16px", color: "var(--text-low)", marginTop: "3px", fontFamily: "var(--font-bebas)", letterSpacing: "0.06em" }}>R$ 10,00 A FATIA</p>
           </div>
         </div>
