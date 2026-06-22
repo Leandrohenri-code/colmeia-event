@@ -101,7 +101,7 @@ export default function Hero() {
       {/* Photo background */}
       <div ref={bgRef} style={{ position: "absolute", inset: 0, zIndex: 1 }}>
         <div className="hero-bg-image" style={{ position: "absolute", inset: 0 }}>
-          <Image src="/assets/deeko-pressure.jpg" alt="" fill priority style={{ objectFit: "cover", objectPosition: "center top" }} />
+          <Image src="/assets/deeko-cover.jpg" alt="" fill priority style={{ objectFit: "cover", objectPosition: "center top" }} />
         </div>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.90) 100%)" }} />
         {/* Grain */}

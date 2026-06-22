@@ -92,7 +92,7 @@ export default function Lineup() {
             padding: "24px 28px",
           }}>
             <Image
-              src="/assets/deeko-pressure.jpg"
+              src="/assets/deeko-cover.jpg"
               alt=""
               fill
               style={{ objectFit: "cover", opacity: 0.25, mixBlendMode: "luminosity" }}

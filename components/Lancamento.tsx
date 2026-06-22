@@ -33,7 +33,7 @@ export default function Lancamento() {
       display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", overflow: "hidden",
     }}>
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-        <Image src="/assets/deeko-pressure.jpg" alt="" fill style={{ objectFit: "cover", objectPosition: "center", opacity: 0.06 }} />
+        <Image src="/assets/deeko-cover.jpg" alt="" fill style={{ objectFit: "cover", objectPosition: "center", opacity: 0.06 }} />
       </div>
       <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: "860px", margin: "0 auto" }}>
         <Eyebrow>Exclusivo</Eyebrow>
