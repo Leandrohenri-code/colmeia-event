@@ -42,51 +42,56 @@ export default function Lineup() {
           PROGRAMAÇÃO
         </h2>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
 
-          {/* Gabriel Felix — foto */}
+          {/* Gabriel Felix */}
           <div className="lineup-card" style={{
-            height: "160px", borderRadius: "10px", overflow: "hidden",
+            height: "220px", borderRadius: "12px", overflow: "hidden",
             border: "0.5px solid var(--border-subtle)", position: "relative",
-            display: "flex", alignItems: "flex-end", padding: "20px 24px",
+            display: "flex", alignItems: "flex-end", padding: "24px 28px",
           }}>
             <Image
               className="card-bg-media"
               src="/assets/gabriel-felix.jpg"
               alt=""
               fill
-              style={{ objectFit: "cover", objectPosition: "center top", opacity: 0.35 }}
+              style={{ objectFit: "cover", objectPosition: "center center", opacity: 0.70 }}
             />
-            <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.68)" }} />
+            <div style={{
+              position: "absolute", inset: 0,
+              background: "linear-gradient(to top, rgba(0,0,0,0.82) 30%, rgba(0,0,0,0.10) 100%)",
+            }} />
             <div style={{ position: "relative", zIndex: 2 }}>
-              <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.35)", letterSpacing: "0.08em", marginBottom: "4px" }}>14h – 15h</div>
-              <div style={{ fontSize: "22px", fontWeight: 700, color: "#fff", letterSpacing: "0.02em" }}>Gabriel Felix</div>
+              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.50)", letterSpacing: "0.10em", marginBottom: "4px", textTransform: "uppercase" }}>14h – 15h</div>
+              <div style={{ fontSize: "26px", fontWeight: 700, color: "#fff", letterSpacing: "0.02em" }}>Gabriel Felix</div>
             </div>
           </div>
 
           {/* Nectar — vídeo */}
           <div className="lineup-card" style={{
-            height: "160px", borderRadius: "10px", overflow: "hidden",
+            height: "220px", borderRadius: "12px", overflow: "hidden",
             border: "0.5px solid var(--border-subtle)", position: "relative",
-            display: "flex", alignItems: "flex-end", padding: "20px 24px",
+            display: "flex", alignItems: "flex-end", padding: "24px 28px",
           }}>
             <video
               className="card-bg-media"
               src="/assets/nectar-set.mp4"
               autoPlay muted loop playsInline
-              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.35 }}
+              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.70 }}
             />
-            <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.70)" }} />
-
+            <div style={{
+              position: "absolute", inset: 0,
+              background: "linear-gradient(to top, rgba(0,0,0,0.82) 30%, rgba(0,0,0,0.10) 100%)",
+            }} />
             <div style={{ position: "relative", zIndex: 2 }}>
-              <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.35)", letterSpacing: "0.08em", marginBottom: "4px" }}>15h – 16h</div>
-              <div style={{ fontSize: "22px", fontWeight: 700, color: "#fff", letterSpacing: "0.02em" }}>Nectar</div>
+              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.50)", letterSpacing: "0.10em", marginBottom: "4px", textTransform: "uppercase" }}>15h – 16h</div>
+              <div style={{ fontSize: "26px", fontWeight: 700, color: "#fff", letterSpacing: "0.02em" }}>Nectar</div>
             </div>
           </div>
 
           {/* Deeko — Headliner */}
           <div className="lineup-card" style={{
-            minHeight: "220px", borderRadius: "10px", overflow: "hidden",
+            height: "300px", borderRadius: "12px", overflow: "hidden",
             border: "0.5px solid #3B3BCC", position: "relative",
             background: "#050505", display: "flex", flexDirection: "column", justifyContent: "flex-end",
             padding: "24px 28px",
@@ -95,9 +100,12 @@ export default function Lineup() {
               src="/assets/deeko-cover.jpg"
               alt=""
               fill
-              style={{ objectFit: "cover", opacity: 0.25, mixBlendMode: "luminosity" }}
+              style={{ objectFit: "cover", objectPosition: "center top", opacity: 0.55, mixBlendMode: "luminosity" }}
             />
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0.70) 100%)" }} />
+            <div style={{
+              position: "absolute", inset: 0,
+              background: "linear-gradient(to top, rgba(0,0,0,0.90) 35%, rgba(0,0,0,0.20) 100%)",
+            }} />
 
             <div style={{ position: "absolute", top: "20px", left: "28px", display: "flex", gap: "8px" }}>
               <span style={{
@@ -114,13 +122,13 @@ export default function Lineup() {
             </div>
 
             <div style={{ position: "relative", zIndex: 2 }}>
-              <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.30)", letterSpacing: "0.08em", marginBottom: "6px" }}>16h – 18h</div>
+              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.40)", letterSpacing: "0.10em", marginBottom: "6px", textTransform: "uppercase" }}>16h – 18h</div>
               <div style={{
                 fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif",
-                fontSize: "52px", letterSpacing: "0.08em", lineHeight: 0.95,
+                fontSize: "64px", letterSpacing: "0.08em", lineHeight: 0.95,
                 color: "#ffffff",
               }}>DEEKO</div>
-              <div style={{ width: "100%", height: "0.5px", background: "rgba(59,59,204,0.45)", marginTop: "16px" }} />
+              <div style={{ width: "100%", height: "0.5px", background: "rgba(59,59,204,0.50)", marginTop: "16px" }} />
             </div>
           </div>
 
