@@ -46,7 +46,7 @@ export default function Lineup() {
 
           {/* Gabriel Felix */}
           <div className="lineup-card" style={{
-            height: "220px", borderRadius: "12px", overflow: "hidden",
+            height: "300px", borderRadius: "12px", overflow: "hidden",
             border: "0.5px solid var(--border-subtle)", position: "relative",
             display: "flex", alignItems: "flex-end", padding: "24px 28px",
           }}>
@@ -55,7 +55,7 @@ export default function Lineup() {
               src="/assets/gabriel-felix.jpg"
               alt=""
               fill
-              style={{ objectFit: "cover", objectPosition: "center center", opacity: 0.70 }}
+              style={{ objectFit: "cover", objectPosition: "center 25%", opacity: 0.70 }}
             />
             <div style={{
               position: "absolute", inset: 0,
@@ -69,7 +69,7 @@ export default function Lineup() {
 
           {/* Nectar — vídeo */}
           <div className="lineup-card" style={{
-            height: "220px", borderRadius: "12px", overflow: "hidden",
+            height: "300px", borderRadius: "12px", overflow: "hidden",
             border: "0.5px solid var(--border-subtle)", position: "relative",
             display: "flex", alignItems: "flex-end", padding: "24px 28px",
           }}>
