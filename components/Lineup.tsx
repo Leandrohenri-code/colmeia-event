@@ -62,7 +62,7 @@ export default function Lineup() {
               background: "linear-gradient(to top, rgba(0,0,0,0.82) 30%, rgba(0,0,0,0.10) 100%)",
             }} />
             <div style={{ position: "relative", zIndex: 2 }}>
-              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.50)", letterSpacing: "0.10em", marginBottom: "4px", textTransform: "uppercase" }}>14h – 15h</div>
+              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.50)", letterSpacing: "0.10em", marginBottom: "4px", textTransform: "uppercase" }}>16h – 17h30</div>
               <div style={{ fontSize: "26px", fontWeight: 700, color: "#fff", letterSpacing: "0.02em" }}>Gabriel Felix</div>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default function Lineup() {
               background: "linear-gradient(to top, rgba(0,0,0,0.82) 30%, rgba(0,0,0,0.10) 100%)",
             }} />
             <div style={{ position: "relative", zIndex: 2 }}>
-              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.50)", letterSpacing: "0.10em", marginBottom: "4px", textTransform: "uppercase" }}>15h – 16h</div>
+              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.50)", letterSpacing: "0.10em", marginBottom: "4px", textTransform: "uppercase" }}>17h30 – 19h30</div>
               <div style={{ fontSize: "26px", fontWeight: 700, color: "#fff", letterSpacing: "0.02em" }}>Nectar</div>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function Lineup() {
             </div>
 
             <div style={{ position: "relative", zIndex: 2 }}>
-              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.40)", letterSpacing: "0.10em", marginBottom: "6px", textTransform: "uppercase" }}>16h – 18h</div>
+              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.40)", letterSpacing: "0.10em", marginBottom: "6px", textTransform: "uppercase" }}>19h30 – 22h</div>
               <div style={{
                 fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif",
                 fontSize: "64px", letterSpacing: "0.08em", lineHeight: 0.95,

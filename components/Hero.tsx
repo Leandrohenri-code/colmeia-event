@@ -127,7 +127,7 @@ export default function Hero() {
 
         <div ref={metaRef} style={{ marginBottom: "40px" }}>
           <p style={{ fontSize: "20px", color: "rgba(255,255,255,0.40)", marginBottom: "6px", fontFamily: "var(--font-bebas)", letterSpacing: "0.08em" }}>
-            DIA 20 · 13H ÀS 18H
+            27 JUN · 16H ÀS 22H
           </p>
           {/* TODO: local a confirmar */}
         </div>
