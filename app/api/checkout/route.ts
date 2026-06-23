@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
-export async function POST() {
+export async function POST(req: NextRequest) {
   const accessToken = process.env.MP_ACCESS_TOKEN
 
   if (!accessToken) {
@@ -10,7 +10,10 @@ export async function POST() {
     )
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3001'
+  // Detect base URL from request origin or Vercel env, fallback to production domain
+  const origin = req.headers.get('origin')
+  const vercelUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? origin ?? vercelUrl ?? 'https://colmeia-event.vercel.app'
 
   try {
     const response = await fetch('https://api.mercadopago.com/checkout/preferences', {
@@ -42,7 +45,7 @@ export async function POST() {
 
     if (!response.ok) {
       const err = await response.json()
-      console.error('[checkout] Erro MP:', err)
+      console.error('[checkout] Erro MP:', JSON.stringify(err))
       return NextResponse.json({ error: 'Erro ao criar preferência.' }, { status: 500 })
     }
 
