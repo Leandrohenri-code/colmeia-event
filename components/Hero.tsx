@@ -98,10 +98,15 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Photo background */}
+      {/* Video background */}
       <div ref={bgRef} style={{ position: "absolute", inset: 0, zIndex: 1 }}>
         <div className="hero-bg-image" style={{ position: "absolute", inset: 0 }}>
-          <Image src="/assets/deeko-cover.jpg" alt="" fill priority style={{ objectFit: "cover", objectPosition: "center top" }} />
+          <video
+            autoPlay muted loop playsInline
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+          >
+            <source src="/assets/hero-bg.mp4" type="video/mp4" />
+          </video>
         </div>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.90) 100%)" }} />
         {/* Grain */}
