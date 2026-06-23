@@ -129,7 +129,9 @@ export default function Hero() {
           <p style={{ fontSize: "20px", color: "rgba(255,255,255,0.40)", marginBottom: "6px", fontFamily: "var(--font-bebas)", letterSpacing: "0.08em" }}>
             27 JUN · 16H ÀS 22H
           </p>
-          {/* TODO: local a confirmar */}
+          <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.28)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.6 }}>
+            R. Maria da Conceição Barra Mansa, 67 · Vila Pitangui · Lavras/MG
+          </p>
         </div>
 
         <div ref={ctasRef} style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>

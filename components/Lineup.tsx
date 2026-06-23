@@ -16,15 +16,8 @@ export default function Lineup() {
         gsap.registerPlugin(st.ScrollTrigger);
         const ctx = gsap.context(() => {
           gsap.from(".lineup-card", {
-            opacity: 0,
-            x: -36,
-            duration: 0.70,
-            stagger: 0.14,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top 78%",
-            },
+            opacity: 0, x: -36, duration: 0.70, stagger: 0.14, ease: "power3.out",
+            scrollTrigger: { trigger: sectionRef.current, start: "top 78%" },
           });
         }, sectionRef);
         cleanup = () => ctx.revert();
@@ -44,30 +37,7 @@ export default function Lineup() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
 
-          {/* Gabriel Felix */}
-          <div className="lineup-card" style={{
-            height: "300px", borderRadius: "12px", overflow: "hidden",
-            border: "0.5px solid var(--border-subtle)", position: "relative",
-            display: "flex", alignItems: "flex-end", padding: "24px 28px",
-          }}>
-            <Image
-              className="card-bg-media"
-              src="/assets/gabriel-felix.jpg"
-              alt=""
-              fill
-              style={{ objectFit: "cover", objectPosition: "center 25%", opacity: 0.70 }}
-            />
-            <div style={{
-              position: "absolute", inset: 0,
-              background: "linear-gradient(to top, rgba(0,0,0,0.82) 30%, rgba(0,0,0,0.10) 100%)",
-            }} />
-            <div style={{ position: "relative", zIndex: 2 }}>
-              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.50)", letterSpacing: "0.10em", marginBottom: "4px", textTransform: "uppercase" }}>16h – 17h30</div>
-              <div style={{ fontSize: "26px", fontWeight: 700, color: "#fff", letterSpacing: "0.02em" }}>Gabriel Felix</div>
-            </div>
-          </div>
-
-          {/* Nectar — vídeo */}
+          {/* FELIKAUM — vídeo */}
           <div className="lineup-card" style={{
             height: "300px", borderRadius: "12px", overflow: "hidden",
             border: "0.5px solid var(--border-subtle)", position: "relative",
@@ -75,32 +45,46 @@ export default function Lineup() {
           }}>
             <video
               className="card-bg-media"
-              src="/assets/nectar-set.mp4"
+              src="/assets/felikaum.mp4"
               autoPlay muted loop playsInline
               style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.70 }}
+            />
+            {/* fallback foto enquanto o vídeo não estiver disponível */}
+            <Image
+              className="card-bg-media"
+              src="/assets/gabriel-felix.jpg"
+              alt=""
+              fill
+              style={{ objectFit: "cover", objectPosition: "center 25%", opacity: 0.70, zIndex: -1 }}
             />
             <div style={{
               position: "absolute", inset: 0,
               background: "linear-gradient(to top, rgba(0,0,0,0.82) 30%, rgba(0,0,0,0.10) 100%)",
             }} />
             <div style={{ position: "relative", zIndex: 2 }}>
-              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.50)", letterSpacing: "0.10em", marginBottom: "4px", textTransform: "uppercase" }}>17h30 – 19h30</div>
-              <div style={{ fontSize: "26px", fontWeight: 700, color: "#fff", letterSpacing: "0.02em" }}>Nectar</div>
+              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.50)", letterSpacing: "0.10em", marginBottom: "4px", textTransform: "uppercase" }}>16h – 17h30</div>
+              <div style={{ fontSize: "26px", fontWeight: 700, color: "#fff", letterSpacing: "0.02em" }}>FELIKAUM</div>
             </div>
           </div>
 
-          {/* Deeko — Headliner */}
+          {/* NEKTAR — vídeo — Headliner + EP Exclusivo */}
           <div className="lineup-card" style={{
             height: "300px", borderRadius: "12px", overflow: "hidden",
             border: "0.5px solid #3B3BCC", position: "relative",
             background: "#050505", display: "flex", flexDirection: "column", justifyContent: "flex-end",
             padding: "24px 28px",
           }}>
-            <Image
-              src="/assets/deeko-cover.jpg"
-              alt=""
-              fill
-              style={{ objectFit: "cover", objectPosition: "center top", opacity: 0.55, mixBlendMode: "luminosity" }}
+            <video
+              className="card-bg-media"
+              src="/assets/nektar.mp4"
+              autoPlay muted loop playsInline
+              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.55 }}
+            />
+            {/* fallback enquanto vídeo não disponível */}
+            <video
+              src="/assets/nectar-set.mp4"
+              autoPlay muted loop playsInline
+              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.55, zIndex: -1 }}
             />
             <div style={{
               position: "absolute", inset: 0,
@@ -122,13 +106,41 @@ export default function Lineup() {
             </div>
 
             <div style={{ position: "relative", zIndex: 2 }}>
+              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.40)", letterSpacing: "0.10em", marginBottom: "6px", textTransform: "uppercase" }}>17h30 – 19h30</div>
+              <div style={{
+                fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif",
+                fontSize: "64px", letterSpacing: "0.08em", lineHeight: 0.95,
+                color: "#ffffff",
+              }}>NEKTAR</div>
+              <div style={{ width: "100%", height: "0.5px", background: "rgba(59,59,204,0.50)", marginTop: "16px" }} />
+            </div>
+          </div>
+
+          {/* DEEKO — fechamento */}
+          <div className="lineup-card" style={{
+            height: "300px", borderRadius: "12px", overflow: "hidden",
+            border: "0.5px solid var(--border-subtle)", position: "relative",
+            background: "#050505", display: "flex", flexDirection: "column", justifyContent: "flex-end",
+            padding: "24px 28px",
+          }}>
+            <Image
+              src="/assets/deeko-cover.jpg"
+              alt=""
+              fill
+              style={{ objectFit: "cover", objectPosition: "center top", opacity: 0.55, mixBlendMode: "luminosity" }}
+            />
+            <div style={{
+              position: "absolute", inset: 0,
+              background: "linear-gradient(to top, rgba(0,0,0,0.90) 35%, rgba(0,0,0,0.20) 100%)",
+            }} />
+            <div style={{ position: "relative", zIndex: 2 }}>
               <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.40)", letterSpacing: "0.10em", marginBottom: "6px", textTransform: "uppercase" }}>19h30 – 22h</div>
               <div style={{
                 fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif",
                 fontSize: "64px", letterSpacing: "0.08em", lineHeight: 0.95,
                 color: "#ffffff",
               }}>DEEKO</div>
-              <div style={{ width: "100%", height: "0.5px", background: "rgba(59,59,204,0.50)", marginTop: "16px" }} />
+              <div style={{ width: "100%", height: "0.5px", background: "rgba(255,255,255,0.15)", marginTop: "16px" }} />
             </div>
           </div>
 
